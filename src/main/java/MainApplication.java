@@ -24,6 +24,10 @@ public class MainApplication extends Application {
         }
     }
 
+    public void startKarteiKartenDeckErstellen() {
+
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

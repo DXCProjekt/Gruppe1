@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="347.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF;" stylesheets="@bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainApplication">
+<AnchorPane prefHeight="347.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF;" stylesheets="/bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainApplication">
     <children>
         <Label layoutX="190.0" layoutY="39.0" text="KALEMARO">
             <font>
