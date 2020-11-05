@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="347.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF;" stylesheets="/bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainApplication">
+<AnchorPane prefHeight="347.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainApplication">
     <children>
         <Label layoutX="190.0" layoutY="39.0" text="KALEMARO">
             <font>
@@ -16,7 +16,7 @@
         </Label>
         <Pane layoutX="23.0" layoutY="96.0" prefHeight="220.0" prefWidth="220.0" style="-fx-background-color: #2d89ef;">
             <children>
-                <Button fx:id="createQuiz" layoutX="43.0" layoutY="174.0" mnemonicParsing="false" onAction="#startKarteiKartenDeckErstellen" prefHeight="36.0" prefWidth="134.0" text="Deck erstellen" />
+                <Button fx:id="createQuiz" layoutX="43.0" layoutY="174.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" text="Deck erstellen" />
                 <Label layoutX="47.0" layoutY="14.0" text="ERSTELLEN" textFill="WHITE">
                     <font>
                         <Font name="Lucida Sans Regular" size="24.0" />
@@ -26,7 +26,7 @@
         </Pane>
         <Pane layoutX="286.0" layoutY="96.0" prefHeight="220.0" prefWidth="220.0" style="-fx-background-color: #2d89ef;">
             <children>
-                <Button fx:id="startButton" layoutX="46.0" layoutY="174.0" mnemonicParsing="false" onAction="#playKartei" prefHeight="36.0" prefWidth="134.0" text="Deck spielen" />
+                <Button fx:id="startButton" layoutX="46.0" layoutY="174.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" text="Deck spielen" />
                 <Label layoutX="60.0" layoutY="14.0" text="STARTEN" textFill="WHITE">
                     <font>
                         <Font name="Lucida Sans Regular" size="24.0" />
@@ -40,12 +40,12 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Datei">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#closeItem" text="Schließen" />
+                        <MenuItem mnemonicParsing="false" text="Schließen" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Hilfe">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#openAbout" text="Über" />
+                        <MenuItem mnemonicParsing="false" text="Über" />
                     </items>
                 </Menu>
             </menus>

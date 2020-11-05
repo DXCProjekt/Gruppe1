@@ -1,3 +1,4 @@
+import com.sun.javafx.css.StyleManager;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
@@ -5,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.text.Style;
 import java.io.File;
 import java.net.URL;
 
@@ -22,10 +24,6 @@ public class MainApplication extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public void startKarteiKartenDeckErstellen() {
-
     }
 
     public static void main(String[] args) {
