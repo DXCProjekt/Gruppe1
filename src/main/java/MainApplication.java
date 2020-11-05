@@ -20,7 +20,7 @@ public class MainApplication extends Application {
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
             primaryStage.setResizable(false);
-            Platform.setImplicitExit(false);
+            Platform.setImplicitExit(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
