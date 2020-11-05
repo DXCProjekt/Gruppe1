@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="MainApplication"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="347.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF;" stylesheets="@bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainApplication">
+    <children>
+        <Label layoutX="190.0" layoutY="39.0" text="KALEMARO">
+            <font>
+                <Font name="Calibri" size="30.0" />
+            </font>
+        </Label>
+        <Pane layoutX="23.0" layoutY="96.0" prefHeight="220.0" prefWidth="220.0" style="-fx-background-color: #2d89ef;">
+            <children>
+                <Button fx:id="createQuiz" layoutX="43.0" layoutY="174.0" mnemonicParsing="false" onAction="#startKarteiKartenDeckErstellen" prefHeight="36.0" prefWidth="134.0" text="Deck erstellen" />
+                <Label layoutX="47.0" layoutY="14.0" text="ERSTELLEN" textFill="WHITE">
+                    <font>
+                        <Font name="Lucida Sans Regular" size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="286.0" layoutY="96.0" prefHeight="220.0" prefWidth="220.0" style="-fx-background-color: #2d89ef;">
+            <children>
+                <Button fx:id="startButton" layoutX="46.0" layoutY="174.0" mnemonicParsing="false" onAction="#playKartei" prefHeight="36.0" prefWidth="134.0" text="Deck spielen" />
+                <Label layoutX="60.0" layoutY="14.0" text="STARTEN" textFill="WHITE">
+                    <font>
+                        <Font name="Lucida Sans Regular" size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Label layoutX="333.0" layoutY="325.0" text="© 2020 Kai, Leon, Markus, Robin" />
+        <Separator layoutX="25.0" layoutY="74.0" prefHeight="13.0" prefWidth="475.0" />
+        <MenuBar layoutY="-1.0" prefHeight="30.0" prefWidth="520.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Datei">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#closeItem" text="Schließen" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Hilfe">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openAbout" text="Über" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
 </AnchorPane>

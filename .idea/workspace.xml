@@ -8,11 +8,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c98672-5fb7-42eb-b471-0822a0c76323" name="Default Changelist" comment="Adding MainApplication and editing build.gradle">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt1.xml" afterDir="false" />
+    <list default="true" id="c1c98672-5fb7-42eb-b471-0822a0c76323" name="Default Changelist" comment="Updating MainApplication">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainApplication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainApplication.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +173,7 @@
       <workItem from="1604496993363" duration="650000" />
       <workItem from="1604497908399" duration="3332000" />
       <workItem from="1604576766571" duration="2117000" />
-      <workItem from="1604578905197" duration="1161000" />
+      <workItem from="1604578905197" duration="3589000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604475834114</created>
@@ -198,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604577976358</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updating MainApplication">
+      <created>1604580232993</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604580232993</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +255,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="Init" />
     <MESSAGE value="Adding MainApplication and editing build.gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding MainApplication and editing build.gradle" />
+    <MESSAGE value="Updating MainApplication" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating MainApplication" />
   </component>
   <component name="WindowStateProjectService">
     <state x="591" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604503251125">
@@ -299,10 +305,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="496" y="98" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579034747" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604579956569">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604580240587">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579956569" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604580240587" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604576780571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
