@@ -8,14 +8,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c98672-5fb7-42eb-b471-0822a0c76323" name="Default Changelist" comment="MainApp">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MainApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/MainApplication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c1c98672-5fb7-42eb-b471-0822a0c76323" name="Default Changelist" comment="Adding MainApplication and editing build.gradle">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +58,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="module-info" />
         <option value="JavaFXApplication" />
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -96,12 +93,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-15.0.1/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-15.0.1/lib/src.zip" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\IdeaProjects\New\src\main\java\view" />
+      <recent name="C:\Users\Administrator\IdeaProjects\New\src\main\java" />
+    </key>
   </component>
   <component name="RunManager" selected="Gradle.Gruppe1 [run]">
     <configuration name="ApplicationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -118,15 +121,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -173,7 +174,8 @@
       <updated>1604475484624</updated>
       <workItem from="1604496993363" duration="650000" />
       <workItem from="1604497908399" duration="3332000" />
-      <workItem from="1604576766571" duration="1124000" />
+      <workItem from="1604576766571" duration="2117000" />
+      <workItem from="1604578905197" duration="1161000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1604475834114</created>
@@ -189,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604496835281</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adding MainApplication and editing build.gradle">
+      <created>1604577976358</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604577976358</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +249,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="Adding MainApplication and editing build.gradle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding MainApplication and editing build.gradle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="591" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604503251125">
@@ -248,47 +258,51 @@
     </state>
     <state x="591" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604502272824" />
     <state x="591" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604503251125" />
-    <state x="373" y="272" key="FileChooserDialogImpl" timestamp="1604501560418">
+    <state x="992" y="454" key="DetectedRootsChooserDialog" timestamp="1604579024607">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="992" y="454" key="DetectedRootsChooserDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579024607" />
+    <state x="373" y="272" key="FileChooserDialogImpl" timestamp="1604579022505">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604475679919" />
-    <state x="373" y="272" key="FileChooserDialogImpl/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604501560418" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1604576747699">
+    <state x="373" y="272" key="FileChooserDialogImpl/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579022505" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1604579817287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604576747699" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604503038134" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1604576747699">
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1604579817287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604576747699" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604503038134" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1604576747699">
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1604579817287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604576747699" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604503038134" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1604576747699">
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1604579817287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604576747699" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604503038134" />
     <state x="860" y="288" key="NewModule_or_Project.wizard" timestamp="1604501568104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="860" y="288" key="NewModule_or_Project.wizard/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604501568104" />
-    <state x="675" y="158" key="SettingsEditor" timestamp="1604502124336">
+    <state x="496" y="98" key="SettingsEditor" timestamp="1604579034747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="675" y="158" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604502124336" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604577734775">
+    <state x="496" y="98" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579034747" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604579956569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604577734775" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579956569" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604576780571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
