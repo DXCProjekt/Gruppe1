@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="347.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainApplication">
+<AnchorPane prefHeight="347.0" prefWidth="520.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainApplication">
     <children>
         <Label layoutX="190.0" layoutY="39.0" text="KALEMARO">
             <font>
@@ -16,7 +19,7 @@
         </Label>
         <Pane layoutX="23.0" layoutY="96.0" prefHeight="220.0" prefWidth="220.0" style="-fx-background-color: #2d89ef;">
             <children>
-                <Button fx:id="createQuiz" layoutX="43.0" layoutY="174.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="134.0" text="Deck erstellen" />
+                <Button layoutX="43.0" layoutY="174.0" mnemonicParsing="false" onAction="#quizErstellen" prefHeight="36.0" prefWidth="134.0" text="Deck erstellen" />
                 <Label layoutX="47.0" layoutY="14.0" text="ERSTELLEN" textFill="WHITE">
                     <font>
                         <Font name="Lucida Sans Regular" size="24.0" />
