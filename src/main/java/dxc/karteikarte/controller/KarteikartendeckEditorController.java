@@ -71,4 +71,8 @@ public class KarteikartendeckEditorController extends Application {
     public boolean enthaeltKarteikarte(final List<Karteikarte> karteikarten, final Karteikarte karteikarte) {
         return karteikarten.stream().filter(k -> k.getFrage().equalsIgnoreCase(karteikarte.getFrage())).findFirst().isPresent();
     }
+
+    public void test() {
+        //Do something
+    }
 }
