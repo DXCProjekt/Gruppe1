@@ -27,7 +27,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            URL url = new File("src/main/java/view/MainApplication.fxml").toURI().toURL();
+            URL url = new File("src/main/java/dxc/karteikarte/view/MainApplication.fxml").toURI().toURL();
             Parent root = FXMLLoader.load(url);
             primaryStage.setTitle("KarteiKarte KALEMARO");
             primaryStage.setScene(new Scene(root));
@@ -44,7 +44,15 @@ public class MainApplication extends Application {
         launch(args);
     }
 
-    private void geheZuEditor() {
+    public void geheZuMainApplication() {
+        try {
+            replaceSceneContent("MainApplication.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void geheZuEditor() {
         try {
             replaceSceneContent("KarteikartendeckEditor.fxml");
         } catch (IOException e) {
@@ -53,7 +61,7 @@ public class MainApplication extends Application {
     }
 
     private Parent replaceSceneContent(String fxml) throws IOException {
-        URL url = new File("src/main/java/view/" + fxml).toURI().toURL();
+        URL url = new File("src/main/java/dxc/karteikarte/view/" + fxml).toURI().toURL();
         Parent page = FXMLLoader.load(url);
         Scene scene = stage.getScene();
         if (scene == null) {

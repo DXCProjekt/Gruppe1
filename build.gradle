@@ -22,4 +22,4 @@ javafx {
     modules = [ 'javafx.fxml', 'javafx.controls', 'javafx.base', 'javafx.graphics']
 }
 
-mainClassName = 'MainApplication'
+mainClassName = 'dxc.karteikarte.MainApplication'
