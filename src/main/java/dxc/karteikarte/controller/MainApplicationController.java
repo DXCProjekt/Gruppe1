@@ -8,4 +8,7 @@ public class MainApplicationController {
     public void quizErstellen() {
         MainApplication.getInstance().geheZuEditor();
     }
+    @FXML
+    public void quizStarten() { MainApplication.getInstance().geheZuGame();
+    }
 }

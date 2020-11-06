@@ -60,6 +60,14 @@ public class MainApplication extends Application {
         }
     }
 
+    public void geheZuGame() {
+        try {
+            replaceSceneContent("KarteikartenGameUI.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private Parent replaceSceneContent(String fxml) throws IOException {
         URL url = new File("src/main/java/dxc/karteikarte/view/" + fxml).toURI().toURL();
         Parent page = FXMLLoader.load(url);
