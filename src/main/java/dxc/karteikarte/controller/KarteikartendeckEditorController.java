@@ -1,5 +1,6 @@
 package dxc.karteikarte.controller;
 
+import dxc.karteikarte.MainApplication;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -66,6 +67,11 @@ public class KarteikartendeckEditorController extends Application {
     public void vorherigeKarteAction(ActionEvent event) {
         frageTextField.setText(karteikarten.get(letzteKarteIndex-1).getFrage());
         antwortTextField.setText(karteikarten.get(letzteKarteIndex-1).getAntwort());
+    }
+
+    @FXML
+    public void zurueckZuHauptmenu() {
+        MainApplication.getInstance().geheZuMainApplication();
     }
 
     public boolean enthaeltKarteikarte(final List<Karteikarte> karteikarten, final Karteikarte karteikarte) {
