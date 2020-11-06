@@ -112,17 +112,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Gruppe1 [run]">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ApplicationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ApplicationTest" />
       <module name="GradleBase.main" />
@@ -166,6 +155,8 @@
         <item itemvalue="Gradle.Gruppe1 [run]" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.ApplicationTest" />
+        <item itemvalue="Gradle.Gruppe1 [run]" />
+        <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
   </component>
