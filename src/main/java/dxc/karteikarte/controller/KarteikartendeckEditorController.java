@@ -1,4 +1,4 @@
-package controller;
+package dxc.karteikarte.controller;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -10,7 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import model.Karteikarte;
+import dxc.karteikarte.model.Karteikarte;
 
 import java.io.File;
 import java.util.ArrayList;

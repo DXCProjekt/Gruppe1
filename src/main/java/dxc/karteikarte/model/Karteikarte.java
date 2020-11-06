@@ -1,4 +1,4 @@
-package model;
+package dxc.karteikarte.model;
 
 public class Karteikarte {
     private String frage;
