@@ -36,7 +36,7 @@ public class KarteikartendeckEditorController extends Application {
     private Label anzahlKartenLabel;
 
     private int letzteKarteIndex = 0;
-    private int counter = 0;
+    private ErrorController erCtr = new ErrorController();
     private List<Karteikarte> karteikarten = new ArrayList<>();
 
     @Override
@@ -128,13 +128,7 @@ public class KarteikartendeckEditorController extends Application {
             }
 
         } catch (IOException ex) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Fehlermeldung");
-            alert.setHeaderText("Fehler beim Datei speichern!");
-            alert.setContentText("Beim Versuch die Datei zu schreiben ist leider ein Fehler aufgetreten!");
-            alert.showAndWait();
-
+            erCtr.zeigeFehlerSpeichern();
             ex.printStackTrace();
         } finally {
             try {
