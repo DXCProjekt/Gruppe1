@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dxc.karteikarte.controller.KarteikartenGameController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dxc.karteikarte.controller.KarteikartenGameController">
    <children>
       <HBox layoutX="100.0" layoutY="330.0" prefHeight="32.0" prefWidth="415.0">
          <children>
@@ -34,14 +30,13 @@
          </children>
       </HBox>
       <ProgressBar fx:id="fortschrittsBar" layoutX="93.0" layoutY="66.0" prefHeight="25.0" prefWidth="415.0" progress="0.0" />
-      <TextArea fx:id="frageTextArea" editable="false" layoutX="13.0" layoutY="127.0" prefHeight="73.0" prefWidth="577.0" />
+      <TextArea fx:id="frageTextArea" layoutX="13.0" layoutY="127.0" prefHeight="73.0" prefWidth="577.0" />
       <MenuBar fx:id="menuleiste" prefHeight="25.0" prefWidth="601.0">
         <menus>
           <Menu mnemonicParsing="false" text="Datei">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#karteikartendeckLadenAction" text="Laden" />
               <MenuItem mnemonicParsing="false" text="Schließen" />
-                  <MenuItem mnemonicParsing="false" onAction="#hauptmenuAction" text="Hauptmenü" />
+                  <MenuItem mnemonicParsing="false" text="Hauptmenü" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Hilfe">
@@ -54,7 +49,7 @@
       <Text layoutX="250.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Frage lautet..." wrappingWidth="99.0" />
       <Text layoutX="250.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Antwort lautet..." wrappingWidth="107.0" />
       <Text layoutX="272.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fortschritt" wrappingWidth="54.13671875" />
-      <TextArea fx:id="antwortTextArea" editable="false" layoutX="15.0" layoutY="224.0" prefHeight="73.0" prefWidth="577.0" />
+      <TextArea fx:id="antwortTextArea" layoutX="15.0" layoutY="224.0" prefHeight="73.0" prefWidth="577.0" />
       <Label fx:id="deckkartenZahl" layoutX="508.0" layoutY="378.0" prefHeight="17.0" prefWidth="85.0" text="Deckkarte 0/0" />
    </children>
 </AnchorPane>
