@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -114,6 +115,13 @@ public class KarteikartendeckEditorController extends Application {
 
         } catch (IOException ex) {
             System.out.println("Konnte die Kartenliste nicht schreiben");
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Fehlermeldung");
+            alert.setHeaderText("Fehler beim Datei speichern!");
+            alert.setContentText("Beim Versuch die Datei zu schreiben ist leider ein Fehler aufgetreten!");
+            alert.showAndWait();
+
             ex.printStackTrace();
         }
 

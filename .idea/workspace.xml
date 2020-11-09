@@ -9,11 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c98672-5fb7-42eb-b471-0822a0c76323" name="Default Changelist" comment="Pushing for team">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/MainApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/KarteikartendeckEditorController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/view/KarteikartenGameUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/view/KarteikartenGameUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/view/KarteikartendeckEditor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/view/KarteikartendeckEditor.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/MainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/MainApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/controller/KarteikartenGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/controller/KarteikartenGameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/model/Karteikarte.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/model/Karteikarte.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/controller/KarteikartendeckEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/controller/KarteikartendeckEditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/model/Karteikarte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/model/Karteikarte.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +72,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="EditorSaveFunction" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,7 +97,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-15.0.1/lib/src.zip" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Program Files/JetBrains/javafx-sdk-11.0.2/lib/src.zip" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -109,6 +112,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Gruppe1 [run]">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApplicationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ApplicationTest" />
       <module name="GradleBase.main" />
@@ -123,13 +137,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dxc.karteikarte.MainApplication" />
+      <module name="GradleBase.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dxc.karteikarte.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,15 +172,16 @@
     <list>
       <item itemvalue="Application.ApplicationTest" />
       <item itemvalue="Application.MainApp" />
+      <item itemvalue="Application.MainApplication" />
       <item itemvalue="Gradle.Gruppe1 [run]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Gruppe1 [run]" />
+        <item itemvalue="Application.MainApplication" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.ApplicationTest" />
         <item itemvalue="Gradle.Gruppe1 [run]" />
-        <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
   </component>
@@ -302,48 +319,50 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="176" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1600.860@0.0.1600.860" timestamp="1604668754660" />
-    <state x="992" y="454" key="DetectedRootsChooserDialog" timestamp="1604579024607">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="3243" y="611" key="DetectedRootsChooserDialog" timestamp="1604917734829">
+      <screen x="1920" y="0" width="2560" height="1400" />
     </state>
+    <state x="3243" y="611" key="DetectedRootsChooserDialog/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604917734829" />
     <state x="992" y="454" key="DetectedRootsChooserDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579024607" />
     <state x="184" y="85" key="DiffContextDialog" timestamp="1604584913475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="85" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604584913475" />
-    <state x="373" y="272" key="FileChooserDialogImpl" timestamp="1604579022505">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2417" y="366" key="FileChooserDialogImpl" timestamp="1604917731424">
+      <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604475679919" />
+    <state x="2417" y="366" key="FileChooserDialogImpl/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604917731424" />
     <state x="373" y="272" key="FileChooserDialogImpl/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579022505" />
-    <state width="1557" height="157" key="GridCell.Tab.0.bottom" timestamp="1604674798083">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="2519" height="235" key="GridCell.Tab.0.bottom" timestamp="1604925721250">
+      <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="2519" height="340" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604587917711" />
+    <state width="2519" height="235" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604925721250" />
     <state width="1557" height="157" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1604674798083" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="53" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604656907395" />
-    <state width="1557" height="157" key="GridCell.Tab.0.center" timestamp="1604674798083">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="2519" height="235" key="GridCell.Tab.0.center" timestamp="1604925721250">
+      <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="2519" height="340" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604587917711" />
+    <state width="2519" height="235" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604925721250" />
     <state width="1557" height="157" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1604674798083" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="53" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604656907395" />
-    <state width="1557" height="157" key="GridCell.Tab.0.left" timestamp="1604674798083">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="2519" height="235" key="GridCell.Tab.0.left" timestamp="1604925721250">
+      <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="2519" height="340" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604587917711" />
+    <state width="2519" height="235" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604925721250" />
     <state width="1557" height="157" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1604674798083" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="53" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604656907395" />
-    <state width="1557" height="157" key="GridCell.Tab.0.right" timestamp="1604674798083">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="2519" height="235" key="GridCell.Tab.0.right" timestamp="1604925721250">
+      <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="2519" height="340" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604587917711" />
+    <state width="2519" height="235" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604925721250" />
     <state width="1557" height="157" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1604674798083" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="53" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604656907395" />
@@ -378,9 +397,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="860" y="288" key="NewModule_or_Project.wizard/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604501568104" />
-    <state x="496" y="98" key="SettingsEditor" timestamp="1604651049087">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="3101" y="71" key="SettingsEditor" timestamp="1604917759082">
+      <screen x="1920" y="0" width="2560" height="1400" />
     </state>
+    <state x="3101" y="71" key="SettingsEditor/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604917759082" />
     <state x="496" y="98" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579034747" />
     <state x="496" y="98" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604651049087" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604910581677">
@@ -388,10 +408,10 @@
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604910581677" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604654941621" />
-    <state x="2956" y="583" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604587831823">
+    <state x="2956" y="583" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604926802727">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="2956" y="583" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604587831823" />
+    <state x="2956" y="583" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604926802727" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604576780571" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604584892537" />
     <state x="739" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604910526077">

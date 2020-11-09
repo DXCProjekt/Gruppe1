@@ -1,5 +1,7 @@
 package dxc.karteikarte.model;
 
+import java.io.Serializable;
+
 public class Karteikarte {
     private String frage;
     private String antwort;
