@@ -70,8 +70,8 @@ public class KarteikartendeckEditorController extends Application {
 
     @FXML
     public void vorherigeKarteAction(ActionEvent event) {
-        frageTextField.setText(karteikarten.get(letzteKarteIndex-1).getFrage());
-        antwortTextField.setText(karteikarten.get(letzteKarteIndex-1).getAntwort());
+        frageTextField.setText(karteikarten.get(letzteKarteIndex - 1).getFrage());
+        antwortTextField.setText(karteikarten.get(letzteKarteIndex - 1).getAntwort());
     }
 
     @FXML
@@ -86,20 +86,34 @@ public class KarteikartendeckEditorController extends Application {
     @FXML
     public void dateiSpeichern(ActionEvent actionEvent) {
         Karteikarte karte = new Karteikarte();
-        if (counter == 0) {
-            if (antwortTextField.getText().isEmpty() || frageTextField.getText().isEmpty()) {
-                System.out.println("LEERES FELD");
-                return;
-            }
+        karte.setAntwort(antwortTextField.getText());
+        karte.setFrage(frageTextField.getText());
+
+        if (antwortTextField.getText().isEmpty() || frageTextField.getText().isEmpty()) {
+            System.out.println("LEERES FELD");
+            return;
+        } else if (!karteikarten.isEmpty()) {
             karteikarten.add(karte);
 
             FileChooser dateiWahl = new FileChooser();
             dateiWahl.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TXT", "*.txt"));
             dateiWahl.setTitle("Datei speichern");
+            if (!nameDeckTextField.getText().isEmpty()) {
+                String filename = nameDeckTextField.getText();
+                dateiWahl.setInitialFileName(filename);
+            }
+
             File file = dateiWahl.showSaveDialog(new Stage());
             speicherDatei(file);
-            System.out.println("SAVE");
+            //ToDo: Speichern erfolgreich
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Fehlermeldung");
+            alert.setHeaderText("Fehler beim Datei speichern!");
+            alert.setContentText("Beim Versuch die Datei zu schreiben ist leider ein Fehler aufgetreten!");
+            alert.showAndWait();
         }
+
     }
 
 
@@ -114,7 +128,6 @@ public class KarteikartendeckEditorController extends Application {
             }
 
         } catch (IOException ex) {
-            System.out.println("Konnte die Kartenliste nicht schreiben");
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fehlermeldung");
@@ -123,17 +136,17 @@ public class KarteikartendeckEditorController extends Application {
             alert.showAndWait();
 
             ex.printStackTrace();
-        }
-
-        try {
-            assert writer != null;
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
-
 
 
 }

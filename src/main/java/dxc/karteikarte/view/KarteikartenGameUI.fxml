@@ -8,11 +8,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dxc.karteikarte.controller.KarteikartenGameController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dxc.karteikarte.controller.KarteikartenGameController">
    <children>
-      <HBox layoutX="100.0" layoutY="330.0" prefHeight="32.0" prefWidth="415.0">
+      <HBox layoutX="130.0" layoutY="330.0" prefHeight="25.0" prefWidth="342.0">
          <children>
-            <Button fx:id="vorherigeKarteButton" layoutX="179.0" layoutY="330.0" mnemonicParsing="false" onAction="#vorherigeKarteAction" prefHeight="32.0" prefWidth="133.0" text="Vorherige Karte">
+            <Button fx:id="vorherigeKarteButton" layoutX="179.0" layoutY="330.0" mnemonicParsing="false" onAction="#vorherigeKarteAction" prefHeight="25.0" prefWidth="107.0" text="Vorherige Karte">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -22,7 +22,7 @@
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="naechsteKarteButton" layoutX="376.0" layoutY="330.0" mnemonicParsing="false" onAction="#naechsteKarteAction" prefHeight="32.0" prefWidth="134.0" text="Nächste Karte">
+            <Button fx:id="naechsteKarteButton" layoutX="376.0" layoutY="330.0" mnemonicParsing="false" onAction="#naechsteKarteAction" prefHeight="25.0" prefWidth="99.0" text="Nächste Karte">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -33,15 +33,19 @@
       <TextArea fx:id="frageTextArea" layoutX="13.0" layoutY="127.0" prefHeight="73.0" prefWidth="577.0" />
       <MenuBar fx:id="menuleiste" prefHeight="25.0" prefWidth="601.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Datei">
+          <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Schließen" />
-                  <MenuItem mnemonicParsing="false" text="Hauptmenü" />
+              <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Hilfe">
+          <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Über" />
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
         </menus>
