@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import dxc.karteikarte.model.Karteikarte;
+import dxc.karteikarte.controller.ErrorController;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -38,6 +39,7 @@ public class KarteikartendeckEditorController extends Application {
     private int letzteKarteIndex = 0;
     private int counter = 0;
     private List<Karteikarte> karteikarten = new ArrayList<>();
+    private ErrorController erCtr = new ErrorController();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -115,13 +117,7 @@ public class KarteikartendeckEditorController extends Application {
 
         } catch (IOException ex) {
             System.out.println("Konnte die Kartenliste nicht schreiben");
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Fehlermeldung");
-            alert.setHeaderText("Fehler beim Datei speichern!");
-            alert.setContentText("Beim Versuch die Datei zu schreiben ist leider ein Fehler aufgetreten!");
-            alert.showAndWait();
-
+            erCtr.zeigeFehlerSpeichern();
             ex.printStackTrace();
         }
 

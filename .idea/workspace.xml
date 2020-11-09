@@ -8,15 +8,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c98672-5fb7-42eb-b471-0822a0c76323" name="Default Changelist" comment="Pushing for team">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt1.xml" beforeDir="false" />
+    <list default="true" id="c1c98672-5fb7-42eb-b471-0822a0c76323" name="Default Changelist" comment="added alert window &quot;Fehler beim Datei speichern&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/controller/ErrorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/MainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/MainApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/controller/KarteikartenGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/controller/KarteikartenGameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/model/Karteikarte.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/model/Karteikarte.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/controller/KarteikartendeckEditorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dxc/karteikarte/controller/KarteikartendeckEditorController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/controller/KarteikartendeckEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/controller/KarteikartendeckEditorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/model/Karteikarte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dxc/karteikarte/model/Karteikarte.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604910578042</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added alert window &quot;Fehler beim Datei speichern&quot;">
+      <created>1604926927352</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604926927352</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +306,8 @@
     <MESSAGE value="Commit after Merge" />
     <MESSAGE value="MainApplication Connection" />
     <MESSAGE value="Pushing for team" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pushing for team" />
+    <MESSAGE value="added alert window &quot;Fehler beim Datei speichern&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="added alert window &quot;Fehler beim Datei speichern&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="591" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604503251125">
@@ -334,35 +338,35 @@
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604475679919" />
     <state x="2417" y="366" key="FileChooserDialogImpl/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604917731424" />
     <state x="373" y="272" key="FileChooserDialogImpl/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579022505" />
-    <state width="2519" height="235" key="GridCell.Tab.0.bottom" timestamp="1604925721250">
+    <state width="2519" height="235" key="GridCell.Tab.0.bottom" timestamp="1604927549452">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="2519" height="235" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604925721250" />
+    <state width="2519" height="235" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604927549452" />
     <state width="1557" height="157" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1604674798083" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="53" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604656907395" />
-    <state width="2519" height="235" key="GridCell.Tab.0.center" timestamp="1604925721250">
+    <state width="2519" height="235" key="GridCell.Tab.0.center" timestamp="1604927549452">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="2519" height="235" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604925721250" />
+    <state width="2519" height="235" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604927549452" />
     <state width="1557" height="157" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1604674798083" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="53" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604656907395" />
-    <state width="2519" height="235" key="GridCell.Tab.0.left" timestamp="1604925721250">
+    <state width="2519" height="235" key="GridCell.Tab.0.left" timestamp="1604927549452">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="2519" height="235" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604925721250" />
+    <state width="2519" height="235" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604927549452" />
     <state width="1557" height="157" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1604674798083" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="53" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604656907395" />
-    <state width="2519" height="235" key="GridCell.Tab.0.right" timestamp="1604925721250">
+    <state width="2519" height="235" key="GridCell.Tab.0.right" timestamp="1604927549452">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@0.0.1536.824" timestamp="1604492510446" />
-    <state width="2519" height="235" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604925721250" />
+    <state width="2519" height="235" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604927549452" />
     <state width="1557" height="157" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1604674798083" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579817287" />
     <state width="1877" height="53" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604656907395" />
@@ -403,15 +407,16 @@
     <state x="3101" y="71" key="SettingsEditor/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604917759082" />
     <state x="496" y="98" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604579034747" />
     <state x="496" y="98" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604651049087" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604910581677">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604910581677" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604654941621" />
-    <state x="2956" y="583" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604926802727">
+    <state x="2656" y="339" key="Vcs.Push.Dialog.v2" timestamp="1604926998076">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="2956" y="583" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604926802727" />
+    <state x="2656" y="339" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604926998076" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604910581677" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604654941621" />
+    <state x="2956" y="583" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604926956702">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2956" y="583" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.2560.1400@1920.0.2560.1400" timestamp="1604926956702" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1604576780571" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604584892537" />
     <state x="739" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604910526077">
