@@ -6,8 +6,6 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
@@ -25,7 +23,7 @@ public class KarteikartenGameController extends Application {
 
     @FXML
     private ProgressBar fortschrittsBar;
-    
+
     private Karteikartendeck karteikartendeck;
 
     private int aktuellerIndex = 0;
@@ -42,11 +40,15 @@ public class KarteikartenGameController extends Application {
 
     @FXML
     public void naechsteKarteAction() {
-        aktuellerIndex++;
-        String frage = karteikartendeck.getKarteikarten().get(aktuellerIndex).getFrage();
+        if (aktuellerIndex < karteikartendeck.getKarteikarten().size() - 1) {
+            aktuellerIndex++;
+            String frage = karteikartendeck.getKarteikarten().get(aktuellerIndex).getFrage();
 
-        frageTextArea.setText(frage);
-        antwortTextArea.clear();
+            frageTextArea.setText(frage);
+            antwortTextArea.clear();
+
+            aktualisiereFortschrittsBalken();
+        }
     }
 
     @FXML
@@ -57,6 +59,8 @@ public class KarteikartenGameController extends Application {
 
             frageTextArea.setText(frage);
             antwortTextArea.clear();
+
+            aktualisiereFortschrittsBalken();
         }
     }
 
@@ -97,6 +101,11 @@ public class KarteikartenGameController extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void aktualisiereFortschrittsBalken() {
+        Double progess = Double.valueOf(aktuellerIndex) / Double.valueOf(karteikartendeck.getKarteikarten().size() - 1);
+        fortschrittsBar.setProgress(progess);
     }
 }
 
