@@ -1,12 +1,13 @@
 package dxc.karteikarte.controller;
 
-import dxc.karteikarte.MainApplication;
 import dxc.karteikarte.model.Karteikarte;
 import dxc.karteikarte.model.Karteikartendeck;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
@@ -24,7 +25,7 @@ public class KarteikartenGameController extends Application {
 
     @FXML
     private ProgressBar fortschrittsBar;
-
+    
     private Karteikartendeck karteikartendeck;
 
     private int aktuellerIndex = 0;
@@ -41,17 +42,11 @@ public class KarteikartenGameController extends Application {
 
     @FXML
     public void naechsteKarteAction() {
-        if (karteikartendeck != null) {
-            if (aktuellerIndex < karteikartendeck.getKarteikarten().size() - 1) {
-                aktuellerIndex++;
-                String frage = karteikartendeck.getKarteikarten().get(aktuellerIndex).getFrage();
+        aktuellerIndex++;
+        String frage = karteikartendeck.getKarteikarten().get(aktuellerIndex).getFrage();
 
-                frageTextArea.setText(frage);
-                antwortTextArea.clear();
-
-                aktualisiereFortschrittsBalken();
-            }
-        }
+        frageTextArea.setText(frage);
+        antwortTextArea.clear();
     }
 
     @FXML
@@ -62,17 +57,13 @@ public class KarteikartenGameController extends Application {
 
             frageTextArea.setText(frage);
             antwortTextArea.clear();
-
-            aktualisiereFortschrittsBalken();
         }
     }
 
     @FXML
     public void loesungsButtonAction() {
-        if (karteikartendeck != null) {
-            String antwort = karteikartendeck.getKarteikarten().get(aktuellerIndex).getAntwort();
-            antwortTextArea.setText(antwort);
-        }
+        String antwort = karteikartendeck.getKarteikarten().get(aktuellerIndex).getAntwort();
+        antwortTextArea.setText(antwort);
     }
 
     @FXML
@@ -81,11 +72,6 @@ public class KarteikartenGameController extends Application {
         File ausgwählteDatei = fileChooser.showOpenDialog(new Stage());
         ladeKarteikartendeck(ausgwählteDatei);
         frageTextArea.setText(karteikartendeck.getKarteikarten().get(0).getFrage());
-    }
-
-    @FXML
-    public void hauptmenuAction() {
-        MainApplication.getInstance().geheZuMainApplication();
     }
 
     public void ladeKarteikartendeck(File file) {
@@ -111,11 +97,6 @@ public class KarteikartenGameController extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void aktualisiereFortschrittsBalken() {
-        Double progess = Double.valueOf(aktuellerIndex) / Double.valueOf(karteikartendeck.getKarteikarten().size() - 1);
-        fortschrittsBar.setProgress(progess);
     }
 }
 
