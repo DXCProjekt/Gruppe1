@@ -82,8 +82,6 @@ public class KarteikartendeckEditorController extends Application {
         return karteikarten.stream().filter(k -> k.getFrage().equalsIgnoreCase(karteikarte.getFrage())).findFirst().isPresent();
     }
 
-
-
     @FXML
     public void dateiSpeichern(ActionEvent actionEvent) {
         Karteikarte karte = new Karteikarte();

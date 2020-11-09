@@ -1,19 +1,20 @@
 package dxc.karteikarte.controller;
 
 import dxc.karteikarte.model.Karteikarte;
+import dxc.karteikarte.model.Karteikartendeck;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-
-import javax.swing.*;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
 
 public class KarteikartenGameController extends Application {
     @FXML
@@ -24,22 +25,10 @@ public class KarteikartenGameController extends Application {
 
     @FXML
     private ProgressBar fortschrittsBar;
+    
+    private Karteikartendeck karteikartendeck;
 
-    @FXML
-    private Button naechsteKarteButton;
-
-    @FXML
-    private Button loesungsButton;
-
-    @FXML
-    private Button vorherigeKarteButton;
-
-    @FXML
-    private Label deckkartenZahl;
-
-    private int letzteKarteIndex = 0;
-
-    private List<Karteikarte> karteikarten = new ArrayList<>();
+    private int aktuellerIndex = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -49,20 +38,65 @@ public class KarteikartenGameController extends Application {
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+    }
 
+    @FXML
+    public void naechsteKarteAction() {
+        aktuellerIndex++;
+        String frage = karteikartendeck.getKarteikarten().get(aktuellerIndex).getFrage();
 
+        frageTextArea.setText(frage);
+        antwortTextArea.clear();
     }
+
     @FXML
-    public void naechsteKarteAction(){
-        System.out.println("next");
+    public void vorherigeKarteAction() {
+        if (aktuellerIndex > 0) {
+            aktuellerIndex--;
+            String frage = karteikartendeck.getKarteikarten().get(aktuellerIndex).getFrage();
+
+            frageTextArea.setText(frage);
+            antwortTextArea.clear();
+        }
     }
+
     @FXML
-    public void vorherigeKarteAction(){
-        System.out.println("vorher");
+    public void loesungsButtonAction() {
+        String antwort = karteikartendeck.getKarteikarten().get(aktuellerIndex).getAntwort();
+        antwortTextArea.setText(antwort);
     }
+
     @FXML
-    public void loesungsButtonAction(){
-        System.out.println("lösung");
+    public void karteikartendeckLadenAction() {
+        FileChooser fileChooser = new FileChooser();
+        File ausgwählteDatei = fileChooser.showOpenDialog(new Stage());
+        ladeKarteikartendeck(ausgwählteDatei);
+        frageTextArea.setText(karteikartendeck.getKarteikarten().get(0).getFrage());
+    }
+
+    public void ladeKarteikartendeck(File file) {
+        karteikartendeck = new Karteikartendeck();
+        karteikartendeck.setName(file.getName());
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+            String zeile;
+            while ((zeile = bufferedReader.readLine()) != null) {
+                String[] zeileAufgteilt = zeile.split("/");
+
+                String frage = zeileAufgteilt[0];
+                String antwort = zeileAufgteilt[1];
+
+                Karteikarte karteikarte = new Karteikarte();
+                karteikarte.setFrage(frage);
+                karteikarte.setAntwort(antwort);
+
+                karteikartendeck.getKarteikarten().add(karteikarte);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 
