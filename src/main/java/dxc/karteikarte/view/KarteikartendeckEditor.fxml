@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -9,15 +13,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="600.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dxc.karteikarte.controller.KarteikartendeckEditorController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="600.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dxc.karteikarte.controller.KarteikartendeckEditorController">
    <children>
-      <TextArea fx:id="frageTextField" layoutX="30.0" layoutY="94.0" prefHeight="148.0" prefWidth="541.0" />
-      <TextArea fx:id="antwortTextField" layoutX="30.0" layoutY="266.0" prefHeight="148.0" prefWidth="541.0" />
-      <Button fx:id="vorherigeKarteButton" layoutX="123.0" layoutY="430.0" mnemonicParsing="false" onAction="#vorherigeKarteAction" prefHeight="25.0" prefWidth="124.0" text="Vorherige Karte" />
-      <Button fx:id="naechsteKarteButton" layoutX="353.0" layoutY="430.0" mnemonicParsing="false" onAction="#naechsteKarteAction" prefHeight="25.0" prefWidth="124.0" text="Nächste Karte" />
+      <ImageView fitHeight="236.0" fitWidth="300.0" layoutX="335.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Kalemaro_clean.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="frageTextField" layoutX="30.0" layoutY="94.0" prefHeight="148.0" prefWidth="541.0" style="-fx-border-color: #ffc3c3;" />
+      <TextArea fx:id="antwortTextField" layoutX="30.0" layoutY="266.0" prefHeight="148.0" prefWidth="541.0" style="-fx-border-color: #ffc3c3;" />
+      <Button fx:id="vorherigeKarteButton" layoutX="123.0" layoutY="430.0" mnemonicParsing="false" onAction="#vorherigeKarteAction" prefHeight="25.0" prefWidth="124.0" style="-fx-border-color: #ffc3c3;" text="Vorherige Karte" />
+      <Button fx:id="naechsteKarteButton" layoutX="353.0" layoutY="430.0" mnemonicParsing="false" onAction="#naechsteKarteAction" prefHeight="25.0" prefWidth="124.0" style="-fx-border-color: #ffc3c3;" text="Nächste Karte" />
       <Label layoutX="248.0" layoutY="77.0" prefHeight="17.0" prefWidth="106.0" text="Die Frage lautet..." />
       <Label layoutX="235.0" layoutY="249.0" prefHeight="17.0" prefWidth="130.0" text="Die Antwortet lautet..." />
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+      <MenuBar prefHeight="25.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="Datei">
             <items>
@@ -33,7 +42,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextField fx:id="nameDeckTextField" alignment="CENTER" layoutX="214.0" layoutY="39.0" promptText="Name des Decks" />
+      <TextField fx:id="nameDeckTextField" alignment="CENTER" layoutX="214.0" layoutY="39.0" promptText="Name des Decks" style="-fx-border-color: #ffc3c3;" />
       <Label fx:id="anzahlKartenLabel" layoutX="558.0" layoutY="434.0" prefHeight="17.0" prefWidth="13.0" />
    </children>
 </Pane>

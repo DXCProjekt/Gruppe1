@@ -29,7 +29,7 @@ public class MainApplication extends Application {
         try {
             URL url = new File("src/main/java/dxc/karteikarte/view/MainApplication.fxml").toURI().toURL();
             Parent root = FXMLLoader.load(url);
-            primaryStage.setTitle("KarteiKarte KALEMARO");
+            primaryStage.setTitle("Kalemaro");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
             primaryStage.setResizable(false);

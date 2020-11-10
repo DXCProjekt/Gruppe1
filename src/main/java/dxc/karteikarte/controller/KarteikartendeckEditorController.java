@@ -79,10 +79,6 @@ public class KarteikartendeckEditorController extends Application {
         MainApplication.getInstance().geheZuMainApplication();
     }
 
-    public boolean enthaeltKarteikarte(final List<Karteikarte> karteikarten, final Karteikarte karteikarte) {
-        return karteikarten.stream().filter(k -> k.getFrage().equalsIgnoreCase(karteikarte.getFrage())).findFirst().isPresent();
-    }
-
     @FXML
     public void dateiSpeichern(ActionEvent actionEvent) {
         Karteikarte karte = new Karteikarte();
@@ -90,11 +86,7 @@ public class KarteikartendeckEditorController extends Application {
         karte.setFrage(frageTextField.getText());
 
         if (antwortTextField.getText().isEmpty() || frageTextField.getText().isEmpty()) {
-            if (karteikarten.isEmpty()) {
-                erCtr.zeigeFehlerSpeichern();
-            } else if (!karteikarten.isEmpty()) {
-                System.out.println(karteikarten);
-            }
+            System.out.println("LEERES FELD");
             return;
         } else if (!karteikarten.isEmpty()) {
             karteikarten.add(karte);
@@ -109,9 +101,6 @@ public class KarteikartendeckEditorController extends Application {
 
             File file = dateiWahl.showSaveDialog(new Stage());
             speicherDatei(file);
-            //ToDo: Speichern erfolgreich
-        } else {
-            erCtr.zeigeFehlerSpeichern();
         }
     }
 
@@ -127,7 +116,7 @@ public class KarteikartendeckEditorController extends Application {
             }
 
         } catch (IOException ex) {
-            erCtr.zeigeFehlerSpeichern();
+            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Datei speichern!", "Beim Versuch die Datei zu schreiben ist leider ein Fehler aufgetreten!");
             ex.printStackTrace();
         } finally {
             try {
