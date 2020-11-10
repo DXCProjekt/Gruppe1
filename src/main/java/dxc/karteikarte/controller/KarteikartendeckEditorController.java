@@ -1,6 +1,7 @@
 package dxc.karteikarte.controller;
 
 import dxc.karteikarte.MainApplication;
+import dxc.karteikarte.model.Karteikartendeck;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,10 +16,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import dxc.karteikarte.model.Karteikarte;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,10 +32,10 @@ public class KarteikartendeckEditorController extends Application {
 
     @FXML
     private Label anzahlKartenLabel;
-
+    private Karteikartendeck karteikartendeck;
+    private boolean inEditMode = false;
     private int letzteKarteIndex = 0;
     private ErrorController erCtr = new ErrorController();
-    private List<Karteikarte> karteikarten = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -54,24 +52,32 @@ public class KarteikartendeckEditorController extends Application {
         boolean istFrageTextFieldLeer = frageTextField.getText().trim().isEmpty();
         boolean istAntwortTextFieldLeer = antwortTextField.getText().trim().isEmpty();
 
-        if (!istFrageTextFieldLeer && !istAntwortTextFieldLeer) {
-            Karteikarte karteikarte = new Karteikarte();
-            karteikarte.setFrage(frageTextField.getText());
-            karteikarte.setAntwort(antwortTextField.getText());
-            karteikarten.add(karteikarte);
+        if(inEditMode) {
             letzteKarteIndex++;
+            frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
+            antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
+        } else {
+            if (!istFrageTextFieldLeer && !istAntwortTextFieldLeer) {
+                if (karteikartendeck == null) { karteikartendeck = new Karteikartendeck();}
+                Karteikarte karteikarte = new Karteikarte();
+                karteikarte.setFrage(frageTextField.getText());
+                karteikarte.setAntwort(antwortTextField.getText());
+                karteikartendeck.getKarteikarten().add(karteikarte);
+                letzteKarteIndex++;
 
-            anzahlKartenLabel.setText(String.valueOf(karteikarten.size()));
+                anzahlKartenLabel.setText(String.valueOf(karteikartendeck.getKarteikarten().size()));
 
-            frageTextField.clear();
-            antwortTextField.clear();
+                frageTextField.clear();
+                antwortTextField.clear();
+            }
         }
     }
 
     @FXML
     public void vorherigeKarteAction(ActionEvent event) {
-        frageTextField.setText(karteikarten.get(letzteKarteIndex - 1).getFrage());
-        antwortTextField.setText(karteikarten.get(letzteKarteIndex - 1).getAntwort());
+        letzteKarteIndex--;
+        frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
+        antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
     }
 
     @FXML
@@ -88,8 +94,8 @@ public class KarteikartendeckEditorController extends Application {
         if (antwortTextField.getText().isEmpty() || frageTextField.getText().isEmpty()) {
             System.out.println("LEERES FELD");
             return;
-        } else if (!karteikarten.isEmpty()) {
-            karteikarten.add(karte);
+        } else if (!karteikartendeck.getKarteikarten().isEmpty()) {
+            karteikartendeck.getKarteikarten().add(karte);
 
             FileChooser dateiWahl = new FileChooser();
             dateiWahl.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TXT", "*.txt"));
@@ -104,13 +110,50 @@ public class KarteikartendeckEditorController extends Application {
         }
     }
 
+    @FXML
+    public void dateiLadenAction() {
+        FileChooser fileChooser = new FileChooser();
+        File ausgwählteDatei = fileChooser.showOpenDialog(new Stage());
+        inEditMode = true;
+        dateiLaden(ausgwählteDatei);
+        nameDeckTextField.setText(karteikartendeck.getName());
+        frageTextField.setText(karteikartendeck.getKarteikarten().get(0).getFrage());
+        antwortTextField.setText(karteikartendeck.getKarteikarten().get(0).getAntwort());
+    }
+
+    public void dateiLaden (File file) {
+        karteikartendeck = new Karteikartendeck();
+        karteikartendeck.setName(file.getName());
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+            String zeile;
+            while ((zeile = bufferedReader.readLine()) != null) {
+                String[] zeileAufgteilt = zeile.split("/");
+
+                String frage = zeileAufgteilt[0];
+                String antwort = zeileAufgteilt[1];
+
+                Karteikarte karteikarte = new Karteikarte();
+                karteikarte.setFrage(frage);
+                karteikarte.setAntwort(antwort);
+
+                karteikartendeck.getKarteikarten().add(karteikarte);
+            }
+        } catch (FileNotFoundException e) {
+            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Laden der Datei", "Die Datei konnte nicht gefunden werden");
+            e.printStackTrace();
+        } catch (IOException e) {
+            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Lesen der Datei", "Die Datei konnte nicht korrekt eingelesen werden");
+            e.printStackTrace();
+        }
+    }
 
     private void speicherDatei(File datei) {
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(datei));
 
-            for (Karteikarte karte : karteikarten) {
+            for (Karteikarte karte : karteikartendeck.getKarteikarten()) {
                 writer.write(karte.getFrage() + "/");
                 writer.write(karte.getAntwort() + "\n");
             }
