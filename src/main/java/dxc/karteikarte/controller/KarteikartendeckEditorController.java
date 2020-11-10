@@ -90,7 +90,11 @@ public class KarteikartendeckEditorController extends Application {
         karte.setFrage(frageTextField.getText());
 
         if (antwortTextField.getText().isEmpty() || frageTextField.getText().isEmpty()) {
-            System.out.println("LEERES FELD");
+            if (karteikarten.isEmpty()) {
+                erCtr.zeigeFehlerSpeichern();
+            } else if (!karteikarten.isEmpty()) {
+                System.out.println(karteikarten);
+            }
             return;
         } else if (!karteikarten.isEmpty()) {
             karteikarten.add(karte);
@@ -107,13 +111,8 @@ public class KarteikartendeckEditorController extends Application {
             speicherDatei(file);
             //ToDo: Speichern erfolgreich
         } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Fehlermeldung");
-            alert.setHeaderText("Fehler beim Datei speichern!");
-            alert.setContentText("Beim Versuch die Datei zu schreiben ist leider ein Fehler aufgetreten!");
-            alert.showAndWait();
+            erCtr.zeigeFehlerSpeichern();
         }
-
     }
 
 
