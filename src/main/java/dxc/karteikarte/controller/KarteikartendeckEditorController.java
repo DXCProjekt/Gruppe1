@@ -78,7 +78,7 @@ public class KarteikartendeckEditorController extends Application {
         letzteKarteIndex--;
         frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
         antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
-        if (letzteKarteIndex==0) {vorherigeKarteButton.setDisable(true);}
+        if (letzteKarteIndex==0) {vorherigeKarteButton.setDisable(true);} //TODO: Button disablen und wieder reaktivieren
     }
 
     @FXML
