@@ -36,7 +36,7 @@ public class KarteikartendeckEditorController extends Application {
     private Label anzahlKartenLabel;
 
     private int letzteKarteIndex = 0;
-    private ErrorController erCtr = new ErrorController();
+
     private List<Karteikarte> karteikarten = new ArrayList<>();
 
     @Override
