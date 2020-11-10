@@ -1,5 +1,6 @@
 package dxc.karteikarte.controller;
 
+import dxc.karteikarte.MainApplication;
 import dxc.karteikarte.model.Karteikarte;
 import dxc.karteikarte.model.Karteikartendeck;
 import javafx.application.Application;
@@ -43,11 +44,17 @@ public class KarteikartenGameController extends Application {
 
     @FXML
     public void naechsteKarteAction() {
-        aktuellerIndex++;
-        String frage = karteikartendeck.getKarteikarten().get(aktuellerIndex).getFrage();
+        if (karteikartendeck != null) {
+            if (aktuellerIndex < karteikartendeck.getKarteikarten().size() - 1) {
+                aktuellerIndex++;
+                String frage = karteikartendeck.getKarteikarten().get(aktuellerIndex).getFrage();
 
-        frageTextArea.setText(frage);
-        antwortTextArea.clear();
+                frageTextArea.setText(frage);
+                antwortTextArea.clear();
+
+                aktualisiereFortschrittsBalken();
+            }
+        }
     }
 
     @FXML
@@ -58,13 +65,17 @@ public class KarteikartenGameController extends Application {
 
             frageTextArea.setText(frage);
             antwortTextArea.clear();
+
+            aktualisiereFortschrittsBalken();
         }
     }
 
     @FXML
     public void loesungsButtonAction() {
-        String antwort = karteikartendeck.getKarteikarten().get(aktuellerIndex).getAntwort();
-        antwortTextArea.setText(antwort);
+        if (karteikartendeck != null) {
+            String antwort = karteikartendeck.getKarteikarten().get(aktuellerIndex).getAntwort();
+            antwortTextArea.setText(antwort);
+        }
     }
 
     @FXML
@@ -74,6 +85,12 @@ public class KarteikartenGameController extends Application {
         ladeKarteikartendeck(ausgwählteDatei);
         frageTextArea.setText(karteikartendeck.getKarteikarten().get(0).getFrage());
     }
+
+    @FXML
+    public void hauptmenuAction() {
+        MainApplication.getInstance().geheZuMainApplication();
+    }
+
 
     public void ladeKarteikartendeck(File file) {
         karteikartendeck = new Karteikartendeck();
@@ -100,6 +117,11 @@ public class KarteikartenGameController extends Application {
             ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Lesen der Datei", "Die Datei konnte nicht korrekt eingelesen werden");
             e.printStackTrace();
         }
+    }
+
+    public void aktualisiereFortschrittsBalken() {
+        Double progess = Double.valueOf(aktuellerIndex) / Double.valueOf(karteikartendeck.getKarteikarten().size() - 1);
+        fortschrittsBar.setProgress(progess);
     }
 }
 
