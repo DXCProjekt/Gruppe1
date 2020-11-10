@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -29,6 +26,9 @@ public class KarteikartendeckEditorController extends Application {
 
     @FXML
     private TextField nameDeckTextField;
+
+    @FXML
+    private Button vorherigeKarteButton;
 
     @FXML
     private Label anzahlKartenLabel;
@@ -78,6 +78,7 @@ public class KarteikartendeckEditorController extends Application {
         letzteKarteIndex--;
         frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
         antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
+        if (letzteKarteIndex==0) {vorherigeKarteButton.setDisable(true);}
     }
 
     @FXML
