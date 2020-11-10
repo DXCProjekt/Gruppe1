@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -30,6 +31,7 @@ public class MainApplication extends Application {
             URL url = new File("src/main/java/dxc/karteikarte/view/MainApplication.fxml").toURI().toURL();
             Parent root = FXMLLoader.load(url);
             primaryStage.setTitle("Kalemaro");
+            primaryStage.getIcons().add(new Image("file:src/main/java/dxc/karteikarte/resources/kalemaro_icon128.png"));
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
             primaryStage.setResizable(false);
