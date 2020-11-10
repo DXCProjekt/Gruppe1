@@ -2,9 +2,11 @@ package dxc.karteikarte;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -68,6 +70,15 @@ public class MainApplication extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void zeigeInfo() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Hilfe");
+        alert.setHeaderText("Kalemaro Karteikartensystem");
+        alert.setContentText("Ich hoffe wir konnten Ihnen helfen");
+
+        alert.showAndWait();
     }
 
     private Parent starteNeueSzene(String fxml) throws IOException {

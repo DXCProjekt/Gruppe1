@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
@@ -14,6 +15,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class KarteikartenGameController extends Application {
     @FXML
@@ -89,12 +91,19 @@ public class KarteikartenGameController extends Application {
         MainApplication.getInstance().geheZuMainApplication();
     }
 
+    @FXML
+    public void infoAction() {
+        MainApplication.getInstance().zeigeInfo();
+    }
 
     public void ladeKarteikartendeck(File file) {
         karteikartendeck = new Karteikartendeck();
         karteikartendeck.setName(file.getName());
 
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+        try (FileInputStream fis = new FileInputStream(file);
+             InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+             BufferedReader bufferedReader = new BufferedReader(isr)
+        ) {
             String zeile;
             while ((zeile = bufferedReader.readLine()) != null) {
                 String[] zeileAufgteilt = zeile.split("/");

@@ -104,6 +104,10 @@ public class KarteikartendeckEditorController extends Application {
         }
     }
 
+    @FXML
+    public void infoAction() {
+        MainApplication.getInstance().zeigeInfo();
+    }
 
     private void speicherDatei(File datei) {
         BufferedWriter writer = null;
