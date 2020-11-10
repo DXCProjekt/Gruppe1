@@ -37,6 +37,7 @@ public class KarteikartenGameController extends Application {
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+
     }
 
     @FXML
@@ -107,8 +108,10 @@ public class KarteikartenGameController extends Application {
                 karteikartendeck.getKarteikarten().add(karteikarte);
             }
         } catch (FileNotFoundException e) {
+            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Laden der Datei", "Die Datei konnte nicht gefunden werden");
             e.printStackTrace();
         } catch (IOException e) {
+            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Lesen der Datei", "Die Datei konnte nicht korrekt eingelesen werden");
             e.printStackTrace();
         }
     }

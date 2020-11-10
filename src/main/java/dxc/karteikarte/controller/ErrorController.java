@@ -3,11 +3,11 @@ package dxc.karteikarte.controller;
 import javafx.scene.control.Alert;
 
 public class ErrorController {
-    public void zeigeFehlerSpeichern() {
+    public static void zeigeFehlermeldung(String title, String headerText, String contentText) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Fehlermeldung");
-        alert.setHeaderText("Fehler beim Datei speichern!");
-        alert.setContentText("Beim Versuch die Datei zu schreiben ist leider ein Fehler aufgetreten!");
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.setContentText(contentText);
         alert.showAndWait();
     }
 }
