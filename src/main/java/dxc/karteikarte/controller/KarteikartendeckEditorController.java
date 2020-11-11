@@ -75,10 +75,13 @@ public class KarteikartendeckEditorController extends Application {
 
     @FXML
     public void vorherigeKarteAction(ActionEvent event) {
+        if (karteikartendeck == null) {vorherigeKarteButton.setDisable(true);}
+        boolean istFrageTextFieldLeer = frageTextField.getText().trim().isEmpty();
+        boolean istAntwortTextFieldLeer = antwortTextField.getText().trim().isEmpty();
         letzteKarteIndex--;
         frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
         antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
-        if (letzteKarteIndex==0) {vorherigeKarteButton.setDisable(true);} //TODO: Button disablen und wieder reaktivieren
+        if (letzteKarteIndex<=0) {vorherigeKarteButton.setDisable(true);}
     }
 
     @FXML
