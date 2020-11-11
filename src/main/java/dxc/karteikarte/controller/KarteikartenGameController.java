@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
@@ -24,6 +25,11 @@ public class KarteikartenGameController extends Application {
 
     @FXML
     private ProgressBar fortschrittsBar;
+
+    @FXML
+    private Button vorherigeKarteButton;
+    @FXML
+    private Button naechsteKarteButton;
 
     private Karteikartendeck karteikartendeck;
 
@@ -51,6 +57,10 @@ public class KarteikartenGameController extends Application {
                 antwortTextArea.clear();
 
                 aktualisiereFortschrittsBalken();
+                vorherigeKarteButton.setDisable(false);
+                if (aktuellerIndex + 1 == karteikartendeck.getKarteikarten().size()) {
+                    naechsteKarteButton.setDisable(true);
+                }
             }
         }
     }
@@ -65,6 +75,12 @@ public class KarteikartenGameController extends Application {
             antwortTextArea.clear();
 
             aktualisiereFortschrittsBalken();
+            if (aktuellerIndex <= karteikartendeck.getKarteikarten().size() ) {
+                naechsteKarteButton.setDisable(false);
+            }
+            if (aktuellerIndex == 0) {
+                vorherigeKarteButton.setDisable(true);
+            }
         }
     }
 

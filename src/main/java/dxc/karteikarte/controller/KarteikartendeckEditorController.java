@@ -29,6 +29,7 @@ public class KarteikartendeckEditorController extends Application {
 
     @FXML
     private Button vorherigeKarteButton;
+    private Button naechsteKarteButton;
 
     @FXML
     private Label anzahlKartenLabel;
@@ -51,11 +52,11 @@ public class KarteikartendeckEditorController extends Application {
     public void naechsteKarteAction(ActionEvent event) {
         boolean istFrageTextFieldLeer = frageTextField.getText().trim().isEmpty();
         boolean istAntwortTextFieldLeer = antwortTextField.getText().trim().isEmpty();
-
         if(inEditMode) {
             letzteKarteIndex++;
             frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
             antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
+            vorherigeKarteButton.setDisable(false);
         } else {
             if (!istFrageTextFieldLeer && !istAntwortTextFieldLeer) {
                 if (karteikartendeck == null) { karteikartendeck = new Karteikartendeck();}
@@ -64,24 +65,24 @@ public class KarteikartendeckEditorController extends Application {
                 karteikarte.setAntwort(antwortTextField.getText());
                 karteikartendeck.getKarteikarten().add(karteikarte);
                 letzteKarteIndex++;
-
                 anzahlKartenLabel.setText(String.valueOf(karteikartendeck.getKarteikarten().size()));
-
                 frageTextField.clear();
                 antwortTextField.clear();
+                vorherigeKarteButton.setDisable(false);
             }
         }
     }
 
     @FXML
     public void vorherigeKarteAction(ActionEvent event) {
-        if (karteikartendeck == null) {vorherigeKarteButton.setDisable(true);}
-        boolean istFrageTextFieldLeer = frageTextField.getText().trim().isEmpty();
-        boolean istAntwortTextFieldLeer = antwortTextField.getText().trim().isEmpty();
-        letzteKarteIndex--;
-        frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
-        antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
-        if (letzteKarteIndex<=0) {vorherigeKarteButton.setDisable(true);}
+        if (karteikartendeck != null) {
+            letzteKarteIndex--;
+            frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
+            antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
+            if (letzteKarteIndex == 0) {
+                vorherigeKarteButton.setDisable(true);
+            }
+        }
     }
 
     @FXML
