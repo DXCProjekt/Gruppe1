@@ -18,18 +18,13 @@ import java.io.*;
 
 public class KarteikartenGameController extends Application {
     @FXML
-    private TextArea frageTextArea;
-
-    @FXML
-    private TextArea antwortTextArea;
+    private TextArea frageTextArea, antwortTextArea;
 
     @FXML
     private ProgressBar fortschrittsBar;
 
     @FXML
-    private Button vorherigeKarteButton;
-    @FXML
-    private Button naechsteKarteButton;
+    private Button vorherigeKarteButton, naechsteKarteButton;
 
     private Karteikartendeck karteikartendeck;
 

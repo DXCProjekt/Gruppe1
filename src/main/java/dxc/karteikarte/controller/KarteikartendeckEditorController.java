@@ -19,17 +19,13 @@ import java.util.List;
 
 public class KarteikartendeckEditorController extends Application {
     @FXML
-    private TextArea frageTextField;
-
-    @FXML
-    private TextArea antwortTextField;
+    private TextArea frageTextField, antwortTextField;
 
     @FXML
     private TextField nameDeckTextField;
 
     @FXML
-    private Button vorherigeKarteButton;
-    private Button naechsteKarteButton;
+    private Button vorherigeKarteButton, naechsteKarteButton;
 
     @FXML
     private Label anzahlKartenLabel;
