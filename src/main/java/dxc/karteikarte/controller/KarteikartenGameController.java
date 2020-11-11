@@ -7,7 +7,6 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
@@ -82,7 +81,11 @@ public class KarteikartenGameController extends Application {
     public void karteikartendeckLadenAction() {
         FileChooser fileChooser = new FileChooser();
         File ausgwählteDatei = fileChooser.showOpenDialog(new Stage());
-        ladeKarteikartendeck(ausgwählteDatei);
+        try {
+            ladeKarteikartendeck(ausgwählteDatei);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         frageTextArea.setText(karteikartendeck.getKarteikarten().get(0).getFrage());
     }
 
@@ -96,39 +99,39 @@ public class KarteikartenGameController extends Application {
         MainApplication.getInstance().zeigeInfo();
     }
 
-    public void ladeKarteikartendeck(File file) {
+    public void ladeKarteikartendeck(File file) throws IOException {
         karteikartendeck = new Karteikartendeck();
         karteikartendeck.setName(file.getName());
 
-        try (FileInputStream fis = new FileInputStream(file);
-             InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
-             BufferedReader bufferedReader = new BufferedReader(isr)
-        ) {
-            String zeile;
-            while ((zeile = bufferedReader.readLine()) != null) {
-                String[] zeileAufgteilt = zeile.split("/");
+        FileInputStream fis = new FileInputStream(file);
+        InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+        BufferedReader bufferedReader = new BufferedReader(isr);
 
-                String frage = zeileAufgteilt[0];
-                String antwort = zeileAufgteilt[1];
+        String zeile;
+        while ((zeile = bufferedReader.readLine()) != null) {
 
-                Karteikarte karteikarte = new Karteikarte();
-                karteikarte.setFrage(frage);
-                karteikarte.setAntwort(antwort);
+            String[] zeileAufgteilt = zeile.split("/");
 
-                karteikartendeck.getKarteikarten().add(karteikarte);
-            }
-        } catch (FileNotFoundException e) {
-            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Laden der Datei", "Die Datei konnte nicht gefunden werden");
-            e.printStackTrace();
-        } catch (IOException e) {
-            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Lesen der Datei", "Die Datei konnte nicht korrekt eingelesen werden");
-            e.printStackTrace();
+            String frage = zeileAufgteilt[0];
+            String antwort = zeileAufgteilt[1];
+
+            Karteikarte karteikarte = new Karteikarte();
+            karteikarte.setFrage(frage);
+            karteikarte.setAntwort(antwort);
+
+            karteikartendeck.getKarteikarten().add(karteikarte);
         }
+
     }
 
     public void aktualisiereFortschrittsBalken() {
         Double progess = Double.valueOf(aktuellerIndex) / Double.valueOf(karteikartendeck.getKarteikarten().size() - 1);
         fortschrittsBar.setProgress(progess);
+    }
+
+    //Nur für die Unit Tests
+    public Karteikartendeck getKarteikartendeck() {
+        return karteikartendeck;
     }
 }
 

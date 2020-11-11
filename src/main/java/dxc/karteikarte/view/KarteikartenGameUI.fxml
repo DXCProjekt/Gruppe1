@@ -60,12 +60,21 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Text layoutX="250.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Frage lautet..." wrappingWidth="99.0" />
-      <Text layoutX="250.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Antwort lautet..." wrappingWidth="107.0" />
-      <Text layoutX="272.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fortschritt" wrappingWidth="54.13671875" />
+      <Text layoutX="249.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Frage lautet..." wrappingWidth="117.00000040233135">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="241.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Die Antwort lautet..." wrappingWidth="133.9999964684248">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="269.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fortschritt" wrappingWidth="76.99999771686271">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
       <TextArea fx:id="antwortTextArea" editable="false" layoutX="15.0" layoutY="224.0" prefHeight="73.0" prefWidth="577.0" style="-fx-border-color: #ffc3c3;">
          <font>
-            <Font size="20.0" />
+            <Font size="15.0" />
          </font></TextArea>
    </children>
 </AnchorPane>
