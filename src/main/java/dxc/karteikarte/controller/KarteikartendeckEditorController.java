@@ -33,7 +33,6 @@ public class KarteikartendeckEditorController extends Application {
     private boolean inEditMode = false;
     private int letzteKarteIndex = 0;
 
-    private List<Karteikarte> karteikarten = new ArrayList<>();
     private ErrorController erCtr = new ErrorController();
 
     @Override
@@ -50,23 +49,27 @@ public class KarteikartendeckEditorController extends Application {
     public void naechsteKarteAction(ActionEvent event) {
         boolean istFrageTextFieldLeer = frageTextField.getText().trim().isEmpty();
         boolean istAntwortTextFieldLeer = antwortTextField.getText().trim().isEmpty();
-        if(inEditMode) {
-            letzteKarteIndex++;
-            frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
-            antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
-            vorherigeKarteButton.setDisable(false);
-        } else {
-            if (!istFrageTextFieldLeer && !istAntwortTextFieldLeer) {
-                if (karteikartendeck == null) { karteikartendeck = new Karteikartendeck();}
-                Karteikarte karteikarte = new Karteikarte();
-                karteikarte.setFrage(frageTextField.getText());
-                karteikarte.setAntwort(antwortTextField.getText());
-                karteikartendeck.getKarteikarten().add(karteikarte);
+        if(letzteKarteIndex<karteikartendeck.getKarteikarten().size() -1) {
+            if (inEditMode) {
                 letzteKarteIndex++;
-                anzahlKartenLabel.setText(String.valueOf(karteikartendeck.getKarteikarten().size()));
-                frageTextField.clear();
-                antwortTextField.clear();
+                frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
+                antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
                 vorherigeKarteButton.setDisable(false);
+            } else {
+                if (!istFrageTextFieldLeer && !istAntwortTextFieldLeer) {
+                    if (karteikartendeck == null) {
+                        karteikartendeck = new Karteikartendeck();
+                    }
+                    Karteikarte karteikarte = new Karteikarte();
+                    karteikarte.setFrage(frageTextField.getText());
+                    karteikarte.setAntwort(antwortTextField.getText());
+                    karteikartendeck.getKarteikarten().add(karteikarte);
+                    letzteKarteIndex++;
+                    anzahlKartenLabel.setText(String.valueOf(karteikartendeck.getKarteikarten().size()));
+                    frageTextField.clear();
+                    antwortTextField.clear();
+                    vorherigeKarteButton.setDisable(false);
+                }
             }
         }
     }
