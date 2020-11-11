@@ -1,43 +1,40 @@
 package dxc.karteikarte.controller;
 
 import dxc.karteikarte.MainApplication;
+import dxc.karteikarte.model.Karteikartendeck;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import dxc.karteikarte.model.Karteikarte;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class KarteikartendeckEditorController extends Application {
     @FXML
-    private TextArea frageTextField;
-
-    @FXML
-    private TextArea antwortTextField;
+    private TextArea frageTextField, antwortTextField;
 
     @FXML
     private TextField nameDeckTextField;
 
     @FXML
-    private Label anzahlKartenLabel;
+    private Button vorherigeKarteButton, naechsteKarteButton;
 
+    @FXML
+    private Label anzahlKartenLabel;
+    private Karteikartendeck karteikartendeck;
+    private boolean inEditMode = false;
     private int letzteKarteIndex = 0;
 
     private List<Karteikarte> karteikarten = new ArrayList<>();
+    private ErrorController erCtr = new ErrorController();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -53,25 +50,37 @@ public class KarteikartendeckEditorController extends Application {
     public void naechsteKarteAction(ActionEvent event) {
         boolean istFrageTextFieldLeer = frageTextField.getText().trim().isEmpty();
         boolean istAntwortTextFieldLeer = antwortTextField.getText().trim().isEmpty();
-
-        if (!istFrageTextFieldLeer && !istAntwortTextFieldLeer) {
-            Karteikarte karteikarte = new Karteikarte();
-            karteikarte.setFrage(frageTextField.getText());
-            karteikarte.setAntwort(antwortTextField.getText());
-            karteikarten.add(karteikarte);
+        if(inEditMode) {
             letzteKarteIndex++;
-
-            anzahlKartenLabel.setText(String.valueOf(karteikarten.size()));
-
-            frageTextField.clear();
-            antwortTextField.clear();
+            frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
+            antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
+            vorherigeKarteButton.setDisable(false);
+        } else {
+            if (!istFrageTextFieldLeer && !istAntwortTextFieldLeer) {
+                if (karteikartendeck == null) { karteikartendeck = new Karteikartendeck();}
+                Karteikarte karteikarte = new Karteikarte();
+                karteikarte.setFrage(frageTextField.getText());
+                karteikarte.setAntwort(antwortTextField.getText());
+                karteikartendeck.getKarteikarten().add(karteikarte);
+                letzteKarteIndex++;
+                anzahlKartenLabel.setText(String.valueOf(karteikartendeck.getKarteikarten().size()));
+                frageTextField.clear();
+                antwortTextField.clear();
+                vorherigeKarteButton.setDisable(false);
+            }
         }
     }
 
     @FXML
     public void vorherigeKarteAction(ActionEvent event) {
-        frageTextField.setText(karteikarten.get(letzteKarteIndex - 1).getFrage());
-        antwortTextField.setText(karteikarten.get(letzteKarteIndex - 1).getAntwort());
+        if (karteikartendeck != null) {
+            letzteKarteIndex--;
+            frageTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getFrage());
+            antwortTextField.setText(karteikartendeck.getKarteikarten().get(letzteKarteIndex).getAntwort());
+            if (letzteKarteIndex == 0) {
+                vorherigeKarteButton.setDisable(true);
+            }
+        }
     }
 
     @FXML
@@ -88,8 +97,8 @@ public class KarteikartendeckEditorController extends Application {
         if (antwortTextField.getText().isEmpty() || frageTextField.getText().isEmpty()) {
             System.out.println("LEERES FELD");
             return;
-        } else if (!karteikarten.isEmpty()) {
-            karteikarten.add(karte);
+        } else if (!karteikartendeck.getKarteikarten().isEmpty()) {
+            karteikartendeck.getKarteikarten().add(karte);
 
             FileChooser dateiWahl = new FileChooser();
             dateiWahl.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TXT", "*.txt"));
@@ -105,6 +114,43 @@ public class KarteikartendeckEditorController extends Application {
     }
 
     @FXML
+    public void dateiLadenAction() {
+        FileChooser fileChooser = new FileChooser();
+        File ausgwählteDatei = fileChooser.showOpenDialog(new Stage());
+        inEditMode = true;
+        dateiLaden(ausgwählteDatei);
+        nameDeckTextField.setText(karteikartendeck.getName());
+        frageTextField.setText(karteikartendeck.getKarteikarten().get(0).getFrage());
+        antwortTextField.setText(karteikartendeck.getKarteikarten().get(0).getAntwort());
+    }
+
+    public void dateiLaden (File file) {
+        karteikartendeck = new Karteikartendeck();
+        karteikartendeck.setName(file.getName());
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+            String zeile;
+            while ((zeile = bufferedReader.readLine()) != null) {
+                String[] zeileAufgteilt = zeile.split("/");
+
+                String frage = zeileAufgteilt[0];
+                String antwort = zeileAufgteilt[1];
+
+                Karteikarte karteikarte = new Karteikarte();
+                karteikarte.setFrage(frage);
+                karteikarte.setAntwort(antwort);
+
+                karteikartendeck.getKarteikarten().add(karteikarte);
+            }
+        } catch (FileNotFoundException e) {
+            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Laden der Datei", "Die Datei konnte nicht gefunden werden");
+            e.printStackTrace();
+        } catch (IOException e) {
+            ErrorController.zeigeFehlermeldung("Fehlermeldung", "Fehler beim Lesen der Datei", "Die Datei konnte nicht korrekt eingelesen werden");
+            e.printStackTrace();
+        }
+    }
+    @FXML
     public void infoAction() {
         MainApplication.getInstance().zeigeInfo();
     }
@@ -114,7 +160,7 @@ public class KarteikartendeckEditorController extends Application {
         try {
             writer = new BufferedWriter(new FileWriter(datei));
 
-            for (Karteikarte karte : karteikarten) {
+            for (Karteikarte karte : karteikartendeck.getKarteikarten()) {
                 writer.write(karte.getFrage() + "/");
                 writer.write(karte.getAntwort() + "\n");
             }
