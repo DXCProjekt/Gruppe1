@@ -7,8 +7,6 @@ plugins {
 group 'edu.dxc.akunz'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 15
-
 repositories {
     mavenCentral()
 }
