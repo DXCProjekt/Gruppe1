@@ -24,16 +24,6 @@ class KarteikartenGameControllerTest {
     }
 
     @Test
-    void testLadeKarteikartendeckFileNotFound() {
-        Exception exception = assertThrows(IOException.class, () -> karteikartenGameController.ladeKarteikartendeck(new File("src/test/java/dxc/karteikarte/controller/resources/TestquizNichtExistent.txt")));
-
-        String erwarteteNachricht = "Das System kann die angegebene Datei nicht finden";
-        String wirklicheNachricht = exception.getMessage();
-
-        assertTrue(wirklicheNachricht.contains(erwarteteNachricht));
-    }
-
-    @Test
     void testLadeKarteikartendeckVollständigkeit() throws IOException {
         karteikartenGameController.ladeKarteikartendeck(new File("src/test/java/dxc/karteikarte/controller/resources/Testquiz.txt"));
 

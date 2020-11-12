@@ -41,7 +41,7 @@ test {
 mainClassName = 'dxc.karteikarte.Main'
 
 distZip {
-    into(project.name + '-' + project.version +"/bin") {
+    into(project.name + '-' + project.version + "/bin") {
         from '.'
         include 'src/main/resources/view/*'
         include 'src/main/resources/images/*'
