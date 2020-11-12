@@ -38,4 +38,4 @@ test {
     useJUnitPlatform()
 }
 
-mainClassName = 'dxc.karteikarte.MainApplication'
+mainClassName = 'dxc.karteikarte.Main'
