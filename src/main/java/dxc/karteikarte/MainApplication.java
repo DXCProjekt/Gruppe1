@@ -30,10 +30,10 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            URL url = new File("src/main/java/dxc/karteikarte/view/MainApplication.fxml").toURI().toURL();
+            URL url = new File("src/main/resources/view/MainApplication.fxml").toURI().toURL();
             Parent root = FXMLLoader.load(url);
             primaryStage.setTitle("Kalemaro");
-            primaryStage.getIcons().add(new Image("file:src/main/java/dxc/karteikarte/resources/kalemaro_icon128.png"));
+            primaryStage.getIcons().add(new Image("file:src/main/resources/images/kalemaro_icon128.png"));
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
             primaryStage.setResizable(false);
@@ -82,7 +82,7 @@ public class MainApplication extends Application {
     }
 
     private Parent starteNeueSzene(String fxml) throws IOException {
-        URL url = new File("src/main/java/dxc/karteikarte/view/" + fxml).toURI().toURL();
+        URL url = new File("src/main/resources/view/" + fxml).toURI().toURL();
         Parent page = FXMLLoader.load(url);
         Scene scene = stage.getScene();
         if (scene == null) {

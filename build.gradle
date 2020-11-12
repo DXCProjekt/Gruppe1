@@ -39,3 +39,12 @@ test {
 }
 
 mainClassName = 'dxc.karteikarte.Main'
+
+distZip {
+    into(project.name + '-' + project.version) {
+        from '.'
+        include 'src/main/resources/view/*'
+        include 'src/main/resources/images/*'
+        include 'src/main/resources/bootstrap.css'
+    }
+}

@@ -37,7 +37,7 @@ public class KarteikartendeckEditorController extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(new File("src/main/java/view/KarteikartendeckEditor.fxml").toURI().toURL());
+        FXMLLoader fxmlLoader = new FXMLLoader(new File("src/main/resources/view/KarteikartendeckEditor.fxml").toURI().toURL());
         Pane pane = fxmlLoader.load();
         Scene scene = new Scene(pane);
         primaryStage.setScene(scene);

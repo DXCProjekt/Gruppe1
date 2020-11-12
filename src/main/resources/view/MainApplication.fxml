@@ -21,7 +21,7 @@
                 </Label>
             <ImageView fitHeight="341.0" fitWidth="453.0" layoutX="-149.0" layoutY="-68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/kal_createshad.png" />
+                  <Image url="@../images/kal_createshad.png" />
                </image>
             </ImageView>
             <Text layoutX="160.0" layoutY="-33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KALEMARO" wrappingWidth="167.0">
@@ -41,7 +41,7 @@
                 </Label>
             <ImageView fitHeight="242.0" fitWidth="372.0" layoutX="-48.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/kal_play.png" />
+                  <Image url="@../images/kal_play.png" />
                </image>
             </ImageView>
                 <Button fx:id="startButton" layoutX="46.0" layoutY="174.0" mnemonicParsing="false" onAction="#quizStarten" prefHeight="36.0" prefWidth="134.0" text="Deck spielen" />

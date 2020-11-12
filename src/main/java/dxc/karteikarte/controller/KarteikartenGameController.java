@@ -33,7 +33,7 @@ public class KarteikartenGameController extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(new File("src/main/java/view/KarteikartenGameUI.fxml").toURI().toURL());
+        FXMLLoader fxmlLoader = new FXMLLoader(new File("src/main/resources/view/KarteikartenGameUI.fxml").toURI().toURL());
         Pane pane = fxmlLoader.load();
         Scene scene = new Scene(pane);
         primaryStage.setScene(scene);
